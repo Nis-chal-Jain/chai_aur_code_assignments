@@ -21,6 +21,21 @@ html {
   .button:hover{
     cursor: pointer;
   }
+  /* CSS code for the button */
+#createbu {
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+#createbu:hover {
+  cursor: pointer;
+}
+#create{
+  font-size: 20px;
+}
   
   #grey {
     background: grey;
@@ -35,7 +50,5 @@ html {
   #yellow {
     background: yellow;
   }
-  #purple{
-    background-color: purple;
-  }
+  
   
