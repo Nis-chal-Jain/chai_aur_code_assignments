@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+    <title>Your Local Time</title>
+    <style>
+      body {
+        background-color: #212121;
+        color: #fff;
+      }
+      .center {
+        display: flex;
+        height: 100vh;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      .centerBox {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #clock,#worldClock {
+        font-size: 40px;
+        background-color: orange;
+        padding: 20px 50px;
+        margin-top: 10px;
+        border-radius: 10px;
+      }
+      .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Style for the dropdown button */
+        .dropdown select {
+            appearance: none;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Style for the dropdown arrow icon */
+        .dropdown select::after {
+            content: "\25BC"; /* Unicode for down arrow */
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+    </style>
+  </head>
+  <body>
+  
+    <div class="center">
+      <div class="local centerBox">
+        <div id="banner"><span>Your local time</span></div>
+        <div id="clock"></div>
+      </div>
+        <div class="world centerBox">
+            <div class="dropdown">
+                <select name="my-dropdown" id="my-dropdown">
+                    <option value="Asia/Baghdad">Baghdad</option>
+                    <option value="Asia/Hong_Kong">Hong Kong</option>
+                    <option value='Asia/Kolkata'>India</option>
+                    <option value="Indian/Maldives">Maldives</option>
+                    <option value="Indian/Mauritius">Mauritius</option>
+                    <option value="Europe/Monaco">Monaco</option>
+                    <option value='Asia/Tokyo'>Tokyo</option>
+                    <option value='Asia/Qatar'>Qatar</option>
+                </select>
+            </div>
+            <div id="bannerworld"></div>
+         <div id="worldClock"></div>
+        </div>      
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
