@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect,useRef } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import './App.css'
 
 function App() {
@@ -33,6 +33,15 @@ function App() {
   useEffect(() => {
     passowordGenerator()
   }, [numberAllowed, charAllowed, length, passowordGenerator])
+  
+  const reset = () => {
+    setNumberAllowed(false)
+    setCharAllowed(false)
+    setLength(8)
+  }
+  const regen = () => {
+    passowordGenerator();
+  }
 
   return (
     <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500">
@@ -67,6 +76,7 @@ function App() {
         <div className="flex items-center gap-x-1">
           <input
             type="checkbox"
+            checked={numberAllowed}
             defaultChecked={numberAllowed}
             id="numberInput"
             onChange={() => {
@@ -78,6 +88,7 @@ function App() {
         <div className="flex items-center gap-x-1">
           <input
             type="checkbox"
+            checked={charAllowed}
             defaultChecked={charAllowed}
             id="characterInput"
             onChange={() => {
@@ -86,6 +97,16 @@ function App() {
           />
           <label htmlFor="characterInput">Characters</label>
         </div>
+      </div>
+      <div className='flex justify-center gap-3 m-y-4'>
+        <button
+          className='bg-blue-500 px-3 py-1 my-3 rounded-md text-white'
+          onClick={reset}
+        >Reset</button>
+        <button
+          className='bg-blue-500 px-3 py-1 my-3 rounded-md text-white'
+          onClick={regen}
+        >Regenerate</button>
       </div>
     </div>
 
